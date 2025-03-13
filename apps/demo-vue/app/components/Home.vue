@@ -21,9 +21,8 @@ const message = ref();
 const store = useMainStore();
 const fromStore = computed(() => store.isSaved);
 
-
 const save = () => {
   store.setSave();
-  message.value = "Restart to test saved persist state";
+  message.value = 'Restart to test saved persist state';
 };
 </script>

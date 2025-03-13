@@ -13,10 +13,9 @@
 <script setup>
 import { computed } from 'nativescript-vue';
 import { DemoSharedPiniaPersistedstate } from '@demo/shared';
-import { } from '@kakha13/pinia-persistedstate';
+import {} from '@kakha13/pinia-persistedstate';
 const message = computed(() => 'Hello, Vue 3 + NativeScript-Vue 3!');
 </script>
-
 
 <style scoped lang="scss">
 .info {

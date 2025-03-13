@@ -88,13 +88,6 @@ module.exports = {
           description: '@kakha13/pinia-persistedstate: Build',
         },
       },
-      // @kakha13/vue
-      vue: {
-        build: {
-          script: 'nx run vue:build.all',
-          description: '@kakha13/vue: Build',
-        },
-      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -108,10 +101,6 @@ module.exports = {
       'pinia-persistedstate': {
         script: 'nx run pinia-persistedstate:focus',
         description: 'Focus on @kakha13/pinia-persistedstate',
-      },
-      vue: {
-        script: 'nx run vue:focus',
-        description: 'Focus on @kakha13/vue',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

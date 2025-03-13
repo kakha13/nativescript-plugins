@@ -26,6 +26,7 @@ app.use(pinia);
 ### Advanced Configuration
 
 Pass stores ids as array to only persist specific stores
+
 ```typescript
 pinia.use(createPersistedState(['main', 'user']));
 ```

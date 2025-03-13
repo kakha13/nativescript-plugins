@@ -1,9 +1,8 @@
 - [@kakha13/pinia-persistedstate](packages/pinia-persistedstate/README.md)
-- [@kakha13/vue](packages/vue/README.md)
 
 # How to use?
 
-This workspace manages the suite of plugins listed above. 
+This workspace manages the suite of plugins listed above.
 
 ## Prerequisites
 
@@ -44,7 +43,7 @@ npm start
 - Choose the focus commands for the package you wish to focus on and hit enter.
 - All the demo app's will be updated to isolate that 1 package and for supported IDE's (currently VS Code), the source code will also become isolated in the workspace.
 
-Note: *good to always clean the demo you plan to run after focusing. (You can clean any demo from `npm start` as well)*
+Note: _good to always clean the demo you plan to run after focusing. (You can clean any demo from `npm start` as well)_
 
 ## How to publish packages?
 
