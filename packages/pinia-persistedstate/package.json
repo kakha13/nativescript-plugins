@@ -1,6 +1,6 @@
 {
   "name": "@kakha13/pinia-persistedstate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Presisted state for nativescript vue pinia",
   "main": "index",
   "types": "index.d.ts",
