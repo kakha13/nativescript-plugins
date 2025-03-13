@@ -1,0 +1,65 @@
+{
+  "name": "pinia-persistedstate",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/pinia-persistedstate",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/pinia-persistedstate",
+        "tsConfig": "packages/pinia-persistedstate/tsconfig.json",
+        "packageJson": "packages/pinia-persistedstate/package.json",
+        "main": "packages/pinia-persistedstate/index.d.ts",
+        "assets": [
+          "packages/pinia-persistedstate/*.md",
+          "packages/pinia-persistedstate/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/pinia-persistedstate/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts pinia-persistedstate"],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/packages/pinia-persistedstate"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages pinia-persistedstate"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/pinia-persistedstate/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

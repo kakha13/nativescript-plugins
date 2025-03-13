@@ -4,8 +4,9 @@
     "rootDirs": [".", "../.."],
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"],
+      "~/*": ["app/*"],
       "@demo/shared": ["../../tools/demo/index.ts"],
+      "@kakha13/*": ["../../packages/*"],
       "@kakha13/pinia-persistedstate": ["../../packages/pinia-persistedstate/index.d.ts"]
     }
   }

@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/apps/demo-vue": false,
+    "**/packages/pinia-persistedstate": false,
+    "**/apps/demo": false,
+    "**/apps/demo-angular": false
+  },
+  "search.exclude": {
+    "**/apps/demo-vue": false,
+    "**/packages/pinia-persistedstate": false,
+    "**/apps/demo": false,
+    "**/apps/demo-angular": false
+  }
+}

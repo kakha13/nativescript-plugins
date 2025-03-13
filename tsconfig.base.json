@@ -20,7 +20,10 @@
       }
     ],
     "paths": {
-      "@demo/shared": ["tools/demo/index.ts"]
+      "@demo/shared": ["tools/demo/index.ts"],
+      "@kakha13/*": ["packages/*"],
+      "@kakha13/pinia-persistedstate": ["packages/pinia-persistedstate/index.d.ts"],
+      "@kakha13/vue": ["packages/vue/index.d.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

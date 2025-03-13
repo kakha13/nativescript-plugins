@@ -27,15 +27,17 @@
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
     "@nativescript/angular": "^19.0.0",
-    "@nativescript/core": "~8.8.0",
+    "@nativescript/core": "~8.8.6",
     "@nativescript/plugin-tools": "5.5.1",
     "@nativescript/types": "~8.8.0",
     "@nativescript/webpack": "~5.0.22",
     "@ngtools/webpack": "^19.0.0",
     "husky": "~9.0.0",
+    "nativescript-vue": "^3.0.0",
     "ng-packagr": "^19.0.0",
     "rxjs": "~7.8.0",
     "typescript": "~5.6.0",
+    "vue": "~3.5.13",
     "zone.js": "~0.15.0"
   },
   "lint-staged": {
