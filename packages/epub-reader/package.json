@@ -1,12 +1,13 @@
 {
   "name": "@kakha13/epub-reader",
-  "version": "1.0.0",
-  "description": "NativeScript wrapper around FolioReaderKit for reading EPUB files (iOS)",
+  "version": "1.0.1",
+  "description": "NativeScript wrapper around FolioReaderKit for reading EPUB files (iOS and Android)",
   "main": "index",
   "types": "index.d.ts",
   "nativescript": {
     "platforms": {
-      "ios": "9.0.0"
+      "ios": "9.0.0",
+      "android": "8.0.0"
     }
   },
   "repository": {
@@ -18,6 +19,7 @@
     "JavaScript",
     "TypeScript",
     "iOS",
+    "Android",
     "EPUB",
     "FolioReader",
     "Reader"

@@ -1,18 +1,43 @@
 <template>
-  <Page>
-    <ActionBar>
-      <Label text="EPUB Reader"/>
+  <Page class="page">
+    <ActionBar class="action-bar">
+      <Label text="EPUB Reader" class="action-bar-title" />
     </ActionBar>
 
-    <GridLayout rows="auto, *" class="page">
-      <StackLayout row="0" class="info">
-        <Label text="Open EPUB from app bundle or downloaded files" textWrap="true" />
-        <Label text="iOS only. Android coming soon." textWrap="true" class="note" />
+    <GridLayout rows="auto, *" class="page-wrapper">
+      <StackLayout row="0" class="hero" horizontalAlignment="center">
+        <Label text="EPUB Reader 📚" class="hero-title" textWrap="true" />
       </StackLayout>
 
-      <StackLayout row="1" class="actions" verticalAlignment="middle" spacing="12">
-        <Button class="btn btn-primary card-button" text="Open from app bundle" @tap="openEpubFromBundle" />
-        <Button class="btn btn-primary card-button" text="Download and open" @tap="downloadAndOpenEpub" />
+      <StackLayout
+        row="1"
+        class="card-list"
+        verticalAlignment="top"
+        horizontalAlignment="stretch"
+      >
+        <StackLayout>
+          <Label text="Open EPUB from app bundle or downloaded files" class="card-subtitle" textWrap="true" />
+        </StackLayout>
+
+        <StackLayout class="card">
+          <Label text="Open from App Bundle" class="card-title" />
+          <Label
+            text="Load an EPUB file from the app's bundle directory."
+            class="card-subtitle"
+            textWrap="true"
+          />
+          <Button text="Open from app bundle" class="btn btn-primary card-button" @tap="openEpubFromBundle" />
+        </StackLayout>
+
+        <StackLayout class="card">
+          <Label text="Download and Open" class="card-title" />
+          <Label
+            text="Download an EPUB file from the internet and open it."
+            class="card-subtitle"
+            textWrap="true"
+          />
+          <Button text="Download and open" class="btn btn-primary card-button" @tap="downloadAndOpenEpub" />
+        </StackLayout>
       </StackLayout>
     </GridLayout>
   </Page>
@@ -69,23 +94,3 @@ const downloadAndOpenEpub = async () => {
 
 };
 </script>
-
-<style scoped lang="scss">
-
-  .page {
-    padding: 16;
-  }
-
-  .info {
-    spacing: 4;
-  }
-
-  .note {
-    color: #666;
-    font-size: 14;
-  }
-
-  .actions {
-    horizontal-align: center;
-  }
-</style>

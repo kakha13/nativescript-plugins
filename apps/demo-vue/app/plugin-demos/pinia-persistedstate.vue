@@ -1,14 +1,49 @@
 <template>
-  <Page>
-    <ActionBar>
-      <Label text="pinia-persistedstate" />
+  <Page class="page">
+    <ActionBar class="action-bar">
+      <Label text="Pinia Persisted State" class="action-bar-title" />
     </ActionBar>
 
-    <StackLayout verticalAlignment="center" horizontalAlignment="center">
-      <Label class="text-center" :text="fromStore" />
-      <Button text="Save to persist state" class="btn btn-primary" @tap="save()"></Button>
-      <Label class="text-center" :text="message" />
-    </StackLayout>
+    <GridLayout rows="auto, *" class="page-wrapper">
+      <StackLayout row="0" class="hero" horizontalAlignment="center">
+        <Label text="Pinia Persisted State 💾" class="hero-title" textWrap="true" />
+      </StackLayout>
+
+      <StackLayout
+        row="1"
+        class="card-list"
+        verticalAlignment="top"
+        horizontalAlignment="stretch"
+      >
+        <StackLayout class="card">
+          <Label text="Current State" class="card-title" />
+          <Label
+            :text="fromStore"
+            class="card-subtitle"
+            textWrap="true"
+          />
+        </StackLayout>
+
+        <StackLayout class="card">
+          <Label text="Actions" class="card-title" />
+          <Label
+            text="Save the current state to persist it across app restarts."
+            class="card-subtitle"
+            textWrap="true"
+          />
+          <Button text="Save to persist state" class="btn btn-primary card-button" @tap="save()" />
+        </StackLayout>
+
+        <StackLayout class="card" v-if="message">
+          <Label text="Status" class="card-title" />
+          <Label
+            :text="message"
+            class="card-subtitle"
+            textWrap="true"
+          />
+        </StackLayout>
+      </StackLayout>
+    </GridLayout>
   </Page>
 </template>
 
@@ -27,10 +62,3 @@ const save = () => {
 };
 </script>
 
-<style scoped lang="scss">
-.info {
-  font-size: 20;
-  horizontal-align: center;
-  vertical-align: center;
-}
-</style>
