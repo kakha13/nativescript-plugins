@@ -1,0 +1,4 @@
+use_frameworks!
+
+# FolioReaderKit with epub support from custom fork
+pod 'FolioReaderKit', :git => 'https://github.com/kakha13/FolioReaderKitEpub.git', :branch => 'master'

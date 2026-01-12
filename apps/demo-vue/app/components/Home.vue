@@ -1,33 +1,49 @@
 <template>
   <Frame>
-    <Page>
-      <ActionBar>
-        <Label text="Home" />
+    <Page class="page">
+      <ActionBar class="action-bar">
+        <Label text="KAKHA13 NativeScript Plugins" class="action-bar-title" />
       </ActionBar>
 
-      <StackLayout verticalAlignment="center" horizontalAlignment="center">
-        <Label class="text-center" :text="fromStore" />
-        <Button text="Save to persist state" class="btn btn-primary" @tap="save()"></Button>
-        <Label class="text-center" :text="message" />
+      <GridLayout rows="auto, *" class="page-wrapper">
+        <StackLayout row="0" class="hero" horizontalAlignment="center">
+          <Label text="Welcome 👋" class="hero-title" textWrap="true" />
+        </StackLayout>
 
-        <Button text="epub-reader" @tap="$navigateTo(EpubReader)"  " class="btn btn-primary rounded view-demo" />
-      </StackLayout>
+        <StackLayout
+          row="1"
+          class="card-list"
+          verticalAlignment="top"
+          horizontalAlignment="stretch"
+        >
+          <StackLayout class="card" @tap="$navigateTo(PiniaPersistedstate)">
+            <Label text="Pinia Persisted State" class="card-title" />
+            <Label
+              text="State management with automatic persistence."
+              class="card-subtitle"
+              textWrap="true"
+            />
+            <Button text="View demo" class="btn btn-primary card-button" @tap="$navigateTo(PiniaPersistedstate)" />
+          </StackLayout>
+
+          <StackLayout class="card" @tap="$navigateTo(EpubReader)">
+            <Label text="EPUB Reader" class="card-title" />
+            <Label
+              text="Beautiful reader experience for EPUB files."
+              class="card-subtitle"
+              textWrap="true"
+            />
+            <Button text="View demo" class="btn btn-primary card-button" @tap="$navigateTo(EpubReader)" />
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
     </Page>
   </Frame>
 </template>
 
 <script setup>
-import { $navigateTo, computed, ref } from 'nativescript-vue';
-import { useMainStore } from '../store/mainStore';
+import { $navigateTo } from 'nativescript-vue';
+
 import EpubReader from '../plugin-demos/epub-reader.vue';
-
-const message = ref();
-
-const store = useMainStore();
-const fromStore = computed(() => store.isSaved);
-
-const save = () => {
-  store.setSave();
-  message.value = 'Restart to test saved persist state';
-};
+import PiniaPersistedstate from '../plugin-demos/pinia-persistedstate.vue';
 </script>

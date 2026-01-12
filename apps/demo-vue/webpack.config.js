@@ -23,5 +23,7 @@ module.exports = (env) => {
     ]);
   });
 
+  webpack.Utils.addCopyRule('**/*.epub');
+
   return webpack.resolveConfig();
 };
