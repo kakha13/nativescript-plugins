@@ -88,6 +88,20 @@ module.exports = {
           description: '@kakha13/pinia-persistedstate: Build',
         },
       },
+      // @kakha13/epub-reader
+      'epub-reader': {
+        build: {
+          script: 'nx run epub-reader:build.all',
+          description: '@kakha13/epub-reader: Build',
+        },
+      },
+      // @kakha13/epub-reader
+      'epub-reader': {
+        build: {
+          script: 'nx run epub-reader:build.all',
+          description: '@kakha13/epub-reader: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -101,6 +115,14 @@ module.exports = {
       'pinia-persistedstate': {
         script: 'nx run pinia-persistedstate:focus',
         description: 'Focus on @kakha13/pinia-persistedstate',
+      },
+      'epub-reader': {
+        script: 'nx run epub-reader:focus',
+        description: 'Focus on @kakha13/epub-reader',
+      },
+      'epub-reader': {
+        script: 'nx run epub-reader:focus',
+        description: 'Focus on @kakha13/epub-reader',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

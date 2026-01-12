@@ -3,12 +3,14 @@
     "**/apps/demo-vue": false,
     "**/packages/pinia-persistedstate": false,
     "**/apps/demo": false,
-    "**/apps/demo-angular": false
+    "**/apps/demo-angular": false,
+    "**/packages/epub-reader": false
   },
   "search.exclude": {
     "**/apps/demo-vue": false,
     "**/packages/pinia-persistedstate": false,
     "**/apps/demo": false,
-    "**/apps/demo-angular": false
+    "**/apps/demo-angular": false,
+    "**/packages/epub-reader": false
   }
 }
