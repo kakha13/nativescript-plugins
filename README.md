@@ -1,3 +1,4 @@
+- [@kakha13/epub-reader](packages/epub-reader/README.md)
 - [@kakha13/pinia-persistedstate](packages/pinia-persistedstate/README.md)
 
 # How to use?

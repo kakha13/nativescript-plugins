@@ -1,0 +1,65 @@
+{
+  "name": "epub-reader",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/epub-reader",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/epub-reader",
+        "tsConfig": "packages/epub-reader/tsconfig.json",
+        "packageJson": "packages/epub-reader/package.json",
+        "main": "packages/epub-reader/index.d.ts",
+        "assets": [
+          "packages/epub-reader/*.md",
+          "packages/epub-reader/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/epub-reader/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts epub-reader"],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/packages/epub-reader"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages epub-reader"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/epub-reader/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   demos = [
     {
+      name: 'epub-reader',
+    },
+    {
       name: 'pinia-persistedstate',
     },
   ];

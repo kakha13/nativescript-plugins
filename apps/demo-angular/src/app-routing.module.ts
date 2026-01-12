@@ -7,6 +7,7 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'epub-reader', loadChildren: () => import('./plugin-demos/epub-reader.module').then((m) => m.EpubReaderModule) },
   { path: 'pinia-persistedstate', loadChildren: () => import('./plugin-demos/pinia-persistedstate.module').then((m) => m.PiniaPersistedstateModule) },
 ];
 

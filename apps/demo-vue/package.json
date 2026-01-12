@@ -5,7 +5,8 @@
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "nativescript-vue": "3.0.0",
     "pinia": "^3.0.1",
-    "@kakha13/pinia-persistedstate": "file:../../packages/pinia-persistedstate"
+    "@kakha13/pinia-persistedstate": "file:../../packages/pinia-persistedstate",
+    "@kakha13/epub-reader": "file:../../packages/epub-reader"
   },
   "devDependencies": {
     "@nativescript/android": "~8.9.0",

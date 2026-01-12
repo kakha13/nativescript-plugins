@@ -5,7 +5,8 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
-    "@kakha13/pinia-persistedstate": "file:../../packages/pinia-persistedstate"
+    "@kakha13/pinia-persistedstate": "file:../../packages/pinia-persistedstate",
+    "@kakha13/epub-reader": "file:../../packages/epub-reader"
   },
   "devDependencies": {
     "@nativescript/android": "~8.9.0",
