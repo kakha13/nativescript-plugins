@@ -5,7 +5,8 @@
       "~/*": ["src/*"],
       "@demo/shared": ["tools/demo/index.ts"],
       "@kakha13/pinia-persistedstate": ["../../packages/pinia-persistedstate/index.d.ts"],
-      "@kakha13/epub-reader": ["../../packages/epub-reader/index.d.ts"]
+      "@kakha13/epub-reader": ["../../packages/epub-reader/index.d.ts"],
+      "@kakha13/*": ["../../dist/packages/*"]
     }
   },
   "files": ["./references.d.ts", "./src/main.ts", "./src/polyfills.ts"],

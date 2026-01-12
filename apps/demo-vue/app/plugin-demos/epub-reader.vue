@@ -10,18 +10,12 @@
   </Page>
 </template>
 
-<script lang="ts">
-  import Vue from "nativescript-vue";
-  import { DemoSharedEpubReader } from '@demo/shared';
+<script setup>
   import { } from '@kakha13/epub-reader';
+  import { ref } from 'nativescript-vue';
 
-  export default Vue.extend({
-    computed: {
-      message() {
-        return "Test epub-reader";
-      }
-    }
-  });
+  const message = ref('Open epub file');
+
 </script>
 
 <style scoped lang="scss">
