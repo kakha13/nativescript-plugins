@@ -6,7 +6,8 @@
     "@kakha13/pinia-persistedstate": "file:../../packages/pinia-persistedstate",
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "nativescript-vue": "3.0.2",
-    "pinia": "^3.0.4"
+    "pinia": "^3.0.4",
+    "@kakha13/nativescript-flitt": "file:../../packages/nativescript-flitt"
   },
   "devDependencies": {
     "@nativescript/android": "9.0.2",

@@ -10,6 +10,9 @@ export class HomeComponent {
       name: 'epub-reader',
     },
     {
+      name: 'nativescript-flitt',
+    },
+    {
       name: 'pinia-persistedstate',
     },
   ];

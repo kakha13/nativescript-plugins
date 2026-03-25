@@ -1,0 +1,122 @@
+# Payment API reference
+
+> Flitt payment API Reference.
+
+## Home page. Explore the methods to integrate Flitt
+
+- [Home](https://docs.flitt.com/index.md)
+
+## API Reference
+
+- [direct](https://docs.flitt.com/api/applepay-direct/index.md)
+- [getting started](https://docs.flitt.com/api/applepay-getting-started/index.md)
+- [on web](https://docs.flitt.com/api/applepay-web/index.md)
+- [Signature](https://docs.flitt.com/api/building-signature/index.md)
+- [Callbacks](https://docs.flitt.com/api/callbacks/index.md)
+- [Cancel subscription](https://docs.flitt.com/api/cancel-subscriptions/index.md)
+- [Parameters](https://docs.flitt.com/api/capture-parameters/index.md)
+- [Changelog](https://docs.flitt.com/api/changelog/index.md)
+- [Create capture](https://docs.flitt.com/api/create-capture/index.md)
+- [Create order](https://docs.flitt.com/api/create-order-direct/index.md)
+- [Create withdrawal](https://docs.flitt.com/api/create-order-p2pcredit/index.md)
+- [Create order](https://docs.flitt.com/api/create-order-recurring/index.md)
+- [Create order](https://docs.flitt.com/api/create-order/index.md)
+- [Create reversal](https://docs.flitt.com/api/create-reversal/index.md)
+- [Currencies](https://docs.flitt.com/api/currencies/index.md)
+- [Delayed order](https://docs.flitt.com/api/delayed/index.md)
+- [Embedded checkout](https://docs.flitt.com/api/embedded-custom/index.md)
+- [Fiscalisation](https://docs.flitt.com/api/fiscal_data/index.md)
+- [Flutter](https://docs.flitt.com/api/flutter/index.md)
+- [Get capture status](https://docs.flitt.com/api/get-capture-status/index.md)
+- [Get reversal status](https://docs.flitt.com/api/get-reversal-status/index.md)
+- [Geting payment key in Merchant Portal](https://docs.flitt.com/api/getting-payment-key/index.md)
+- [direct](https://docs.flitt.com/api/googlepay-direct/index.md)
+- [getting started](https://docs.flitt.com/api/googlepay-getting-started/index.md)
+- [on web](https://docs.flitt.com/api/googlepay-web/index.md)
+- [Create order](https://docs.flitt.com/api/installments/index.md)
+- [Introduction](https://docs.flitt.com/api/installments_intro/index.md)
+- [Introduction](https://docs.flitt.com/api/introduction/index.md)
+- [Accept purchase](https://docs.flitt.com/api/list-order-transactions/index.md)
+- [Create order](https://docs.flitt.com/api/opb/index.md)
+- [Introduction](https://docs.flitt.com/api/opb_intro/index.md)
+- [Parameters](https://docs.flitt.com/api/order-parameters-direct/index.md)
+- [Parameters](https://docs.flitt.com/api/order-parameters-recurring/index.md)
+- [Parameters](https://docs.flitt.com/api/order-parameters/index.md)
+- [Get order status](https://docs.flitt.com/api/order-status/index.md)
+- [Create order](https://docs.flitt.com/api/paybypayme/index.md)
+- [Introduction](https://docs.flitt.com/api/paybypayme_intro/index.md)
+- [Payment flow](https://docs.flitt.com/api/payment-flow/index.md)
+- [Reports](https://docs.flitt.com/api/reports/index.md)
+- [Request structure](https://docs.flitt.com/api/request/index.md)
+- [Additional data](https://docs.flitt.com/api/reservation_data/index.md)
+- [Response codes](https://docs.flitt.com/api/response-codes/index.md)
+- [Parameters](https://docs.flitt.com/api/reversal-parameters/index.md)
+- [Split payments](https://docs.flitt.com/api/split/index.md)
+- [Create subscription](https://docs.flitt.com/api/subscriptions/index.md)
+- [Introduction](https://docs.flitt.com/api/subscriptions_intro/index.md)
+- [Testing](https://docs.flitt.com/api/testing/index.md)
+- [Android (Java)](https://docs.flitt.com/api/mobile/android/index.md)
+- [Flutter](https://docs.flitt.com/api/mobile/apple-flutter/index.md)
+- [iOS (Swift)](https://docs.flitt.com/api/mobile/apple-ios-swift/index.md)
+- [iOS (Objective-C)](https://docs.flitt.com/api/mobile/apple-ios/index.md)
+- [React Native](https://docs.flitt.com/api/mobile/apple-reactnative/index.md)
+- [in web-view](https://docs.flitt.com/api/mobile/apple-webview/index.md)
+- [Flutter](https://docs.flitt.com/api/mobile/flutter/index.md)
+- [Android (Java)](https://docs.flitt.com/api/mobile/googlepay-android/index.md)
+- [Flutter](https://docs.flitt.com/api/mobile/googlepay-flutter/index.md)
+- [React Native](https://docs.flitt.com/api/mobile/googlepay-reactnative/index.md)
+- [in web-view](https://docs.flitt.com/api/mobile/googlepay-webview/index.md)
+- [iOS (Swift)](https://docs.flitt.com/api/mobile/ios-swift/index.md)
+- [iOS (Objective-C)](https://docs.flitt.com/api/mobile/ios/index.md)
+- [React Native](https://docs.flitt.com/api/mobile/reactnative/index.md)
+
+## Mobile SDKs
+
+- [Android (Java)](https://docs.flitt.com/api/mobile/android/index.md)
+- [Flutter](https://docs.flitt.com/api/mobile/apple-flutter/index.md)
+- [iOS (Swift)](https://docs.flitt.com/api/mobile/apple-ios-swift/index.md)
+- [iOS (Objective-C)](https://docs.flitt.com/api/mobile/apple-ios/index.md)
+- [React Native](https://docs.flitt.com/api/mobile/apple-reactnative/index.md)
+- [in web-view](https://docs.flitt.com/api/mobile/apple-webview/index.md)
+- [Flutter](https://docs.flitt.com/api/mobile/flutter/index.md)
+- [Android (Java)](https://docs.flitt.com/api/mobile/googlepay-android/index.md)
+- [Flutter](https://docs.flitt.com/api/mobile/googlepay-flutter/index.md)
+- [React Native](https://docs.flitt.com/api/mobile/googlepay-reactnative/index.md)
+- [in web-view](https://docs.flitt.com/api/mobile/googlepay-webview/index.md)
+- [iOS (Swift)](https://docs.flitt.com/api/mobile/ios-swift/index.md)
+- [iOS (Objective-C)](https://docs.flitt.com/api/mobile/ios/index.md)
+- [React Native](https://docs.flitt.com/api/mobile/reactnative/index.md)
+
+## SDKs for frontend and backend
+
+- [About SDK](https://docs.flitt.com/sdk-and-mobile/sdk/about-sdk/index.md)
+- [C#](https://docs.flitt.com/sdk-and-mobile/sdk/csharp/index.md)
+- [Card form](https://docs.flitt.com/sdk-and-mobile/sdk/js/index.md)
+- [Node.js](https://docs.flitt.com/sdk-and-mobile/sdk/nodejs/index.md)
+- [PHP](https://docs.flitt.com/sdk-and-mobile/sdk/php/index.md)
+- [Python](https://docs.flitt.com/sdk-and-mobile/sdk/python/index.md)
+- [Apple Pay/Google Pay](https://docs.flitt.com/sdk-and-mobile/sdk/wallets/index.md)
+
+## Getting started
+
+- [Direct](https://docs.flitt.com/getting-started/direct/index.md)
+- [Embedded](https://docs.flitt.com/getting-started/embedded/index.md)
+- [Get started](https://docs.flitt.com/getting-started/get-started/index.md)
+- [Mobile](https://docs.flitt.com/getting-started/mobile/index.md)
+- [Presets](https://docs.flitt.com/getting-started/presets/index.md)
+- [Saving cards](https://docs.flitt.com/getting-started/recurring/index.md)
+- [Redirect](https://docs.flitt.com/getting-started/redirect/index.md)
+
+## CMS plugins
+
+- [CRM&CMS plugins](https://docs.flitt.com/no-code/cms-plugins/index.md)
+- [Tilda](https://docs.flitt.com/no-code/cms/tilda/index.md)
+
+## Other pages
+
+- [Bug bounty](https://docs.flitt.com/bug-bounty/index.md)
+- [PCI DSS compliance](https://docs.flitt.com/pcidss-compliance/index.md)
+- [Supported countries](https://docs.flitt.com/supported-countries/index.md)
+- [Supported payment systems](https://docs.flitt.com/supported-payment-systems/index.md)
+- [Llms](https://docs.flitt.com/llms/index.md)
+

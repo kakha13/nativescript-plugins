@@ -109,6 +109,13 @@ module.exports = {
           description: '@kakha13/epub-reader: Build',
         },
       },
+      // @kakha13/nativescript-flitt
+      'nativescript-flitt': {
+        build: {
+          script: 'nx run nativescript-flitt:build.all',
+          description: '@kakha13/nativescript-flitt: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -134,6 +141,10 @@ module.exports = {
       'epub-reader': {
         script: 'nx run epub-reader:focus',
         description: 'Focus on @kakha13/epub-reader',
+      },
+      'nativescript-flitt': {
+        script: 'nx run nativescript-flitt:focus',
+        description: 'Focus on @kakha13/nativescript-flitt',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

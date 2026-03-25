@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'epub-reader', loadChildren: () => import('./plugin-demos/epub-reader.module').then((m) => m.EpubReaderModule) },
+  { path: 'nativescript-flitt', loadChildren: () => import('./plugin-demos/nativescript-flitt.module').then((m) => m.NativescriptFlittModule) },
   { path: 'pinia-persistedstate', loadChildren: () => import('./plugin-demos/pinia-persistedstate.module').then((m) => m.PiniaPersistedstateModule) },
 ];
 
