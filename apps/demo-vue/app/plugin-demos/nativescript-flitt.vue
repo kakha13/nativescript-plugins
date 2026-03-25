@@ -27,7 +27,7 @@
         <!-- Card Details -->
         <StackLayout class="card">
           <Label text="Card Details" class="card-title" />
-          <Label text="Test card: 4444555566667777 | 01/39 | 111" class="card-subtitle" textWrap="true" />
+          <Label text="Test card: 4444555566661111 | 01/39 | 111" class="card-subtitle" textWrap="true" />
           <TextField v-model="cardNumber" hint="Card Number" keyboardType="number" maxLength="19" class="input" />
           <GridLayout columns="*, *, *">
             <TextField col="0" v-model="expireMonth" hint="MM" keyboardType="number" maxLength="2" class="input" />
@@ -60,11 +60,11 @@ import { FlittPayment, isGooglePaySupported, type FlittReceipt } from '@kakha13/
 
 const MERCHANT_ID = 1549901;
 
-const cardNumber = ref('');
-const expireMonth = ref('');
-const expireYear = ref('');
-const cvv = ref('');
-const amount = ref('');
+const cardNumber = ref('4444555566661111');
+const expireMonth = ref('01');
+const expireYear = ref('39');
+const cvv = ref('111');
+const amount = ref('100');
 const currency = ref('GEL');
 const description = ref('Payment');
 const isProcessing = ref(false);
@@ -155,6 +155,8 @@ async function processGooglePay() {
       currency: currency.value,
       orderId,
       description: description.value,
+      merchantData: JSON.stringify({ userId: '123', plan: 'premium' }),
+      requiredRecToken: true,
     });
 
     if (receipt.status === 'approved') {
