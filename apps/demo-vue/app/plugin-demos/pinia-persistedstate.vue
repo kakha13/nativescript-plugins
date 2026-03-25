@@ -1,17 +1,13 @@
 <template>
   <Page class="page">
     <ActionBar class="action-bar">
+      <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$navigateBack" />
       <Label text="Pinia Persisted State" class="action-bar-title" />
     </ActionBar>
 
-    <GridLayout rows="auto, *" class="page-wrapper">
-      <StackLayout row="0" class="hero" horizontalAlignment="center">
-        <Label text="Pinia Persisted State 💾" class="hero-title" textWrap="true" />
-      </StackLayout>
-
+    <ScrollView>
       <StackLayout
-        row="1"
-        class="card-list"
+        class="page-wrapper card-list"
         verticalAlignment="top"
         horizontalAlignment="stretch"
       >
@@ -43,13 +39,13 @@
           />
         </StackLayout>
       </StackLayout>
-    </GridLayout>
+    </ScrollView>
   </Page>
 </template>
 
 <script setup>
 import { useMainStore } from '../store/mainStore';
-import { computed, ref } from 'nativescript-vue';
+import { computed, ref, $navigateBack } from 'nativescript-vue';
 import { } from '@kakha13/pinia-persistedstate';
 
 const message = ref('');

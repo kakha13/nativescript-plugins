@@ -1,17 +1,13 @@
 <template>
   <Page class="page">
     <ActionBar class="action-bar">
+      <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$navigateBack" />
       <Label text="EPUB Reader" class="action-bar-title" />
     </ActionBar>
 
-    <GridLayout rows="auto, *" class="page-wrapper">
-      <StackLayout row="0" class="hero" horizontalAlignment="center">
-        <Label text="EPUB Reader 📚" class="hero-title" textWrap="true" />
-      </StackLayout>
-
+    <ScrollView>
       <StackLayout
-        row="1"
-        class="card-list"
+        class="page-wrapper card-list"
         verticalAlignment="top"
         horizontalAlignment="stretch"
       >
@@ -39,11 +35,12 @@
           <Button text="Download and open" class="btn btn-primary card-button" @tap="downloadAndOpenEpub" />
         </StackLayout>
       </StackLayout>
-    </GridLayout>
+    </ScrollView>
   </Page>
 </template>
 
 <script setup lang="ts">
+import { $navigateBack } from 'nativescript-vue';
 import { EpubReader } from '@kakha13/epub-reader';
 import { alert, File, Http, knownFolders, path } from '@nativescript/core';
 

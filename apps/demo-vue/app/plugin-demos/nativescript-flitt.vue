@@ -1,20 +1,12 @@
 <template>
   <Page class="page">
     <ActionBar class="action-bar">
+      <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$navigateBack" />
       <Label text="Flitt Payments" class="action-bar-title" />
     </ActionBar>
 
-    <GridLayout rows="auto, *" class="page-wrapper">
-      <StackLayout row="0" class="hero" horizontalAlignment="center">
-        <Label text="Flitt Payments 💳" class="hero-title" textWrap="true" />
-      </StackLayout>
-
-      <StackLayout
-        row="1"
-        class="card-list"
-        verticalAlignment="top"
-        horizontalAlignment="stretch"
-      >
+    <ScrollView>
+      <StackLayout class="page-wrapper card-list" verticalAlignment="top" horizontalAlignment="stretch">
         <!-- Amount & Currency -->
         <StackLayout class="card">
           <Label text="Order Details" class="card-title" />
@@ -25,6 +17,13 @@
           <Button :text="'Currency: ' + currency" class="btn btn-primary card-button" @tap="cycleCurrency" />
         </StackLayout>
 
+
+        <!-- Status -->
+        <StackLayout class="card" v-if="statusMessage">
+          <Label text="Status" class="card-title" />
+          <Label :text="statusMessage" class="card-subtitle" textWrap="true" />
+        </StackLayout>
+
         <!-- Card Details -->
         <StackLayout class="card">
           <Label text="Card Details" class="card-title" />
@@ -33,30 +32,29 @@
           <GridLayout columns="*, *, *">
             <TextField col="0" v-model="expireMonth" hint="MM" keyboardType="number" maxLength="2" class="input" />
             <TextField col="1" v-model="expireYear" hint="YY" keyboardType="number" maxLength="2" class="input" />
-            <TextField col="2" v-model="cvv" hint="CVV" keyboardType="number" maxLength="4" secure="true" class="input" />
+            <TextField col="2" v-model="cvv" hint="CVV" keyboardType="number" maxLength="4" secure="true"
+              class="input" />
           </GridLayout>
-          <Button text="Pay with Card" class="btn btn-primary card-button" :isEnabled="!isProcessing" @tap="processPayment" />
+          <Button text="Pay with Card" class="btn btn-primary card-button" :isEnabled="!isProcessing"
+            @tap="processPayment" />
         </StackLayout>
 
         <!-- Google Pay -->
         <StackLayout class="card" v-if="googlePayAvailable">
           <Label text="Google Pay" class="card-title" />
-          <Label text="Pay using Google Pay with the amount and currency above." class="card-subtitle" textWrap="true" />
-          <Button text="Pay with Google Pay" class="btn btn-primary card-button" :isEnabled="!isProcessing" @tap="processGooglePay" />
+          <Label text="Pay using Google Pay with the amount and currency above." class="card-subtitle"
+            textWrap="true" />
+          <Button text="Pay with Google Pay" class="btn btn-primary card-button" :isEnabled="!isProcessing"
+            @tap="processGooglePay" />
         </StackLayout>
 
-        <!-- Status -->
-        <StackLayout class="card" v-if="statusMessage">
-          <Label text="Status" class="card-title" />
-          <Label :text="statusMessage" class="card-subtitle" textWrap="true" />
-        </StackLayout>
       </StackLayout>
-    </GridLayout>
+    </ScrollView>
   </Page>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'nativescript-vue';
+import { ref, onMounted, onUnmounted, $navigateBack } from 'nativescript-vue';
 import { Dialogs } from '@nativescript/core';
 import { FlittPayment, isGooglePaySupported, type FlittReceipt } from '@kakha13/nativescript-flitt';
 
