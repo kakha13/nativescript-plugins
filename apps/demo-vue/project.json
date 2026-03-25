@@ -8,10 +8,10 @@
       "executor": "@nativescript/nx:build",
       "options": {
         "noHmr": true,
-        "production": true,
-        "uglify": true,
-        "release": true,
-        "forDevice": true
+        "production": false,
+        "uglify": false,
+        "release": false,
+        "forDevice": false
       },
       "dependsOn": [
         {
@@ -35,7 +35,12 @@
     "android": {
       "executor": "@nativescript/nx:build",
       "options": {
-        "platform": "android"
+        "platform": "android",
+        "noHmr": true,
+        "release": false,
+        "production": false,
+        "uglify": false,
+        "forDevice": false
       },
       "dependsOn": [
         {

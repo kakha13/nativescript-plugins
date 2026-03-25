@@ -2,17 +2,20 @@
   "main": "./app/app.ts",
   "description": "NativeScript Application",
   "dependencies": {
-    "@kakha13/epub-reader": "file:../../packages/epub-reader",
-    "@kakha13/pinia-persistedstate": "file:../../packages/pinia-persistedstate",
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "nativescript-vue": "3.0.2",
     "pinia": "^3.0.4",
-    "@kakha13/nativescript-flitt": "file:../../packages/nativescript-flitt"
+    "@kakha13/nativescript-flitt": "file:../../packages/nativescript-flitt",
+    "@kakha13/epub-reader": "file:../../packages/epub-reader",
+    "@kakha13/pinia-persistedstate": "file:../../packages/pinia-persistedstate"
   },
   "devDependencies": {
     "@nativescript/android": "9.0.2",
     "@nativescript/ios": "~9.0.3",
+    "@nativescript/types": "~8.9.1",
     "@nativescript/webpack": "5.0.25",
-    "fork-ts-checker-webpack-plugin": "^9.1.0"
+    "@types/node": "~22.14.0",
+    "fork-ts-checker-webpack-plugin": "^9.1.0",
+    "typescript": "~5.6.0"
   }
 }

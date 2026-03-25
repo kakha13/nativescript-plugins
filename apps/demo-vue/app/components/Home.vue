@@ -26,6 +26,16 @@
             <Button text="View demo" class="btn btn-primary card-button" @tap="$navigateTo(PiniaPersistedstate)" />
           </StackLayout>
 
+          <StackLayout class="card" @tap="$navigateTo(NativescriptFlitt)">
+            <Label text="Flitt Payments" class="card-title" />
+            <Label
+              text="Card and Google Pay payments via Flitt SDK."
+              class="card-subtitle"
+              textWrap="true"
+            />
+            <Button text="View demo" class="btn btn-primary card-button" @tap="$navigateTo(NativescriptFlitt)" />
+          </StackLayout>
+
           <StackLayout class="card" @tap="$navigateTo(EpubReader)">
             <Label text="EPUB Reader" class="card-title" />
             <Label
@@ -45,5 +55,6 @@
 import { $navigateTo } from 'nativescript-vue';
 
 import EpubReader from '../plugin-demos/epub-reader.vue';
+import NativescriptFlitt from '../plugin-demos/nativescript-flitt.vue';
 import PiniaPersistedstate from '../plugin-demos/pinia-persistedstate.vue';
 </script>
