@@ -1,7 +1,7 @@
 <template>
   <Page class="page">
     <ActionBar class="action-bar">
-      <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="$navigateBack" />
+      <NavigationButton text="Back" @tap="$navigateBack" />
       <Label text="EPUB Reader" class="action-bar-title" />
     </ActionBar>
 
