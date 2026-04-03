@@ -9,7 +9,8 @@
       "@kakha13/*": ["../../packages/*"],
       "@kakha13/pinia-persistedstate": ["../../packages/pinia-persistedstate/index.d.ts"],
       "@kakha13/epub-reader": ["../../packages/epub-reader/index.d.ts"],
-      "@kakha13/nativescript-flitt": ["../../packages/nativescript-flitt/index.d.ts"]
+      "@kakha13/nativescript-flitt": ["../../packages/nativescript-flitt/index.d.ts"],
+      "@kakha13/nativescript-in-appp-update": ["../../packages/nativescript-in-appp-update/index.d.ts"]
     }
   }
 }

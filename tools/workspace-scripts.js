@@ -116,6 +116,13 @@ module.exports = {
           description: '@kakha13/nativescript-flitt: Build',
         },
       },
+      // @kakha13/nativescript-in-appp-update
+      'nativescript-in-appp-update': {
+        build: {
+          script: 'nx run nativescript-in-appp-update:build.all',
+          description: '@kakha13/nativescript-in-appp-update: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -145,6 +152,10 @@ module.exports = {
       'nativescript-flitt': {
         script: 'nx run nativescript-flitt:focus',
         description: 'Focus on @kakha13/nativescript-flitt',
+      },
+      'nativescript-in-appp-update': {
+        script: 'nx run nativescript-in-appp-update:focus',
+        description: 'Focus on @kakha13/nativescript-in-appp-update',
       },
       reset: {
         script: 'nx g @nativescript/plugin-tools:focus-packages',

@@ -1,0 +1,65 @@
+{
+  "name": "nativescript-in-appp-update",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/nativescript-in-appp-update",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/nativescript-in-appp-update",
+        "tsConfig": "packages/nativescript-in-appp-update/tsconfig.json",
+        "packageJson": "packages/nativescript-in-appp-update/package.json",
+        "main": "packages/nativescript-in-appp-update/index.d.ts",
+        "assets": [
+          "packages/nativescript-in-appp-update/*.md",
+          "packages/nativescript-in-appp-update/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/nativescript-in-appp-update/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts nativescript-in-appp-update"],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist/packages/nativescript-in-appp-update"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-in-appp-update"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/nativescript-in-appp-update/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
