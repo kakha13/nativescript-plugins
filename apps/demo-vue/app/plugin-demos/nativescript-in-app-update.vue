@@ -15,15 +15,15 @@
             <Label :text="statusMessage" class="card-subtitle" textWrap="true" />
           </StackLayout>
 
-          <!-- Mode Toggle -->
-          <StackLayout class="card">
+          <!-- Mode Toggle (Android only) -->
+          <StackLayout class="card" v-if="isAndroidPlatform">
             <Label text="Manager Mode" class="card-title" />
             <Label :text="useFake ? 'Using FakeAppUpdateManager (local testing)' : 'Using real AppUpdateManager (Play Store)'" class="card-subtitle" textWrap="true" />
             <Button :text="useFake ? 'Switch to Real Manager' : 'Switch to Fake Manager'" class="btn btn-primary card-button" @tap="toggleFakeManager" />
           </StackLayout>
 
-          <!-- Fake Manager Controls -->
-          <StackLayout class="card" v-if="useFake">
+          <!-- Fake Manager Controls (Android only) -->
+          <StackLayout class="card" v-if="useFake && isAndroidPlatform">
             <Label text="Fake Manager Controls" class="card-title" />
             <Label text="Set up fake state before testing." class="card-subtitle" textWrap="true" />
             <Button text="Set Update Available (v999)" class="btn btn-primary card-button" @tap="fakeSetAvailable" />
@@ -33,7 +33,7 @@
           <!-- Check Update -->
           <StackLayout class="card">
             <Label text="Check for Update" class="card-title" />
-            <Label text="Query Google Play for available updates." class="card-subtitle" textWrap="true" />
+            <Label :text="isAndroidPlatform ? 'Query Google Play for available updates.' : 'Query App Store for available updates.'" class="card-subtitle" textWrap="true" />
             <Button text="Check Update" class="btn btn-primary card-button" @tap="checkUpdate" />
           </StackLayout>
 
@@ -45,8 +45,8 @@
             <Button text="Flexible Update" class="btn btn-primary card-button" @tap="startFlexibleUpdate" />
           </StackLayout>
 
-          <!-- Complete -->
-          <StackLayout class="card">
+          <!-- Complete (Android only — iOS App Store handles installation) -->
+          <StackLayout class="card" v-if="isAndroidPlatform">
             <Label text="Complete Update" class="card-title" />
             <Label text="Install a downloaded flexible update (restarts app)." class="card-subtitle" textWrap="true" />
             <Button text="Complete Update" class="btn btn-primary card-button" @tap="completeUpdate" />
@@ -105,7 +105,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted, $navigateBack } from 'nativescript-vue';
-import { Application } from '@nativescript/core';
+import { Application, isAndroid } from '@nativescript/core';
 import { NativescriptInAppUpdate, UpdateType, UpdateAvailability, InstallStatus } from '@kakha13/nativescript-in-app-update';
 
 const statusMessage = ref('Ready');
@@ -114,24 +114,29 @@ const showBottomSheet = ref(false);
 const showSnackbar = ref(false);
 const fakeVersionCode = ref(0);
 const appName = ref('');
+const isAndroidPlatform = ref(isAndroid);
 let updater: NativescriptInAppUpdate | null = null;
 
 function createUpdater() {
   updater?.dispose();
-  updater = new NativescriptInAppUpdate({ useFakeManager: useFake.value });
+  updater = new NativescriptInAppUpdate(isAndroid ? { useFakeManager: useFake.value } : {});
   showBottomSheet.value = false;
   showSnackbar.value = false;
-  statusMessage.value = useFake.value ? 'Fake manager ready' : 'Real manager ready';
+  statusMessage.value = useFake.value && isAndroid ? 'Fake manager ready' : 'Real manager ready';
 }
 
 onMounted(() => {
-  const ctx = Application.android.getNativeApplication();
-  try {
-    const pm = ctx.getPackageManager();
-    const ai = pm.getApplicationInfo(ctx.getPackageName(), 0);
-    appName.value = pm.getApplicationLabel(ai).toString();
-  } catch (e) {
-    appName.value = 'Demo App';
+  if (isAndroid) {
+    const ctx = Application.android.getNativeApplication();
+    try {
+      const pm = ctx.getPackageManager();
+      const ai = pm.getApplicationInfo(ctx.getPackageName(), 0);
+      appName.value = pm.getApplicationLabel(ai).toString();
+    } catch (e) {
+      appName.value = 'Demo App';
+    }
+  } else {
+    appName.value = NSBundle.mainBundle.objectForInfoDictionaryKey('CFBundleDisplayName') as string || 'Demo App';
   }
   createUpdater();
 });

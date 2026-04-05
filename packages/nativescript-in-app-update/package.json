@@ -1,7 +1,7 @@
 {
   "name": "@kakha13/nativescript-in-app-update",
   "version": "1.0.0",
-  "description": "Google Play In-App Updates for NativeScript",
+  "description": "In-App Updates for NativeScript (Android: Google Play, iOS: App Store)",
   "main": "index",
   "types": "index.d.ts",
   "nativescript": {
@@ -19,9 +19,12 @@
     "JavaScript",
     "TypeScript",
     "Android",
+    "iOS",
     "in-app-update",
     "play-core",
-    "app-update"
+    "app-update",
+    "app-store",
+    "storekit"
   ],
   "author": {
     "name": "KAKHA13",
