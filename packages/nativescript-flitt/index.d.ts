@@ -2,6 +2,8 @@ import { View } from '@nativescript/core';
 
 export interface FlittConfig {
   merchantId: number;
+  /** Apple Pay merchant identifier (e.g. "merchant.com.yourapp"). iOS only. */
+  applePayMerchantId?: string;
 }
 
 export interface FlittOrderParams {
@@ -79,11 +81,17 @@ export class FlittPayment {
   /** Pay with card details and a pre-generated backend token. */
   payToken(card: FlittCardParams, token: string): Promise<FlittReceipt>;
 
-  /** Launch the Google Pay sheet for the given order. */
+  /** Launch the Google Pay sheet for the given order. Android only. */
   payWithGooglePay(order: FlittOrderParams): Promise<FlittReceipt>;
 
-  /** Launch the Google Pay sheet using a pre-generated backend token. */
+  /** Launch the Google Pay sheet using a pre-generated backend token. Android only. */
   payWithGooglePayToken(token: string): Promise<FlittReceipt>;
+
+  /** Launch the Apple Pay sheet for the given order. iOS only. */
+  payWithApplePay(order: FlittOrderParams): Promise<FlittReceipt>;
+
+  /** Launch the Apple Pay sheet using a pre-generated backend token. iOS only. */
+  payWithApplePayToken(token: string): Promise<FlittReceipt>;
 
   /** Remove the WebView overlay and clean up listeners. */
   dispose(): void;
@@ -92,3 +100,4 @@ export class FlittPayment {
 export function createFlittCard(params: FlittCardParams): any;
 export function createFlittOrder(params: FlittOrderParams): any;
 export function isGooglePaySupported(): boolean;
+export function isApplePaySupported(): boolean;

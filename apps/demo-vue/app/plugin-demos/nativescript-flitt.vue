@@ -48,6 +48,15 @@
             @tap="processGooglePay" />
         </StackLayout>
 
+        <!-- Apple Pay -->
+        <StackLayout class="card" v-if="applePayAvailable">
+          <Label text="Apple Pay" class="card-title" />
+          <Label text="Pay using Apple Pay with the amount and currency above." class="card-subtitle"
+            textWrap="true" />
+          <Button text="Pay with Apple Pay" class="btn btn-primary card-button" :isEnabled="!isProcessing"
+            @tap="processApplePay" />
+        </StackLayout>
+
       </StackLayout>
     </ScrollView>
   </Page>
@@ -56,9 +65,10 @@
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted, $navigateBack } from 'nativescript-vue';
 import { Dialogs } from '@nativescript/core';
-import { FlittPayment, isGooglePaySupported, type FlittReceipt } from '@kakha13/nativescript-flitt';
+import { FlittPayment, isGooglePaySupported, isApplePaySupported, type FlittReceipt } from '@kakha13/nativescript-flitt';
 
 const MERCHANT_ID = 1549901;
+const APPLE_PAY_MERCHANT_ID = 'merchant.com.yourapp'; // TODO: replace with your Apple Pay merchant identifier
 
 const cardNumber = ref('4444555566661111');
 const expireMonth = ref('01');
@@ -70,12 +80,14 @@ const description = ref('Payment');
 const isProcessing = ref(false);
 const statusMessage = ref('');
 const googlePayAvailable = ref(false);
+const applePayAvailable = ref(false);
 
 let flittPayment: FlittPayment | null = null;
 
 onMounted(() => {
-  flittPayment = new FlittPayment({ merchantId: MERCHANT_ID });
+  flittPayment = new FlittPayment({ merchantId: MERCHANT_ID, applePayMerchantId: APPLE_PAY_MERCHANT_ID });
   googlePayAvailable.value = isGooglePaySupported();
+  applePayAvailable.value = isApplePaySupported();
 });
 
 onUnmounted(() => {
@@ -172,6 +184,48 @@ async function processGooglePay() {
   } catch (err: any) {
     console.error('Google Pay error:', err);
     statusMessage.value = err.message || 'Google Pay failed';
+  } finally {
+    isProcessing.value = false;
+  }
+}
+
+async function processApplePay() {
+  if (!flittPayment) {
+    statusMessage.value = 'Payment system not ready';
+    return;
+  }
+  if (!amount.value) {
+    statusMessage.value = 'Please enter an amount';
+    return;
+  }
+
+  isProcessing.value = true;
+  statusMessage.value = 'Opening Apple Pay...';
+
+  try {
+    const orderId = `order_ap_${Date.now()}`;
+    const amountInCents = parseInt(amount.value, 10);
+
+    const receipt: FlittReceipt = await flittPayment.payWithApplePay({
+      amount: amountInCents,
+      currency: currency.value,
+      orderId,
+      description: description.value,
+    });
+
+    if (receipt.status === 'approved') {
+      statusMessage.value = `Approved! Card: ${receipt.maskedCard} | ID: ${receipt.paymentId}`;
+      await Dialogs.alert({
+        title: 'Payment Successful',
+        message: `Amount: ${receipt.amount / 100} ${receipt.currency}\nCard: ${receipt.maskedCard}\nPayment ID: ${receipt.paymentId}`,
+        okButtonText: 'OK',
+      });
+    } else {
+      statusMessage.value = `Payment ${receipt.status}`;
+    }
+  } catch (err: any) {
+    console.error('Apple Pay error:', err);
+    statusMessage.value = err.message || 'Apple Pay failed';
   } finally {
     isProcessing.value = false;
   }

@@ -135,6 +135,10 @@ export function isGooglePaySupported(): boolean {
   return com.flitt.android.Cloudipsp.supportsGooglePay(ctx);
 }
 
+export function isApplePaySupported(): boolean {
+  return false;
+}
+
 // ─── Receipt mapper ──────────────────────────────────────────────────────────
 
 function mapReceipt(native: com.flitt.android.Receipt): FlittReceipt {
@@ -358,6 +362,16 @@ export class FlittPayment {
     this.googlePayCall = null;
     this.googlePayResolve = null;
     this.googlePayReject = null;
+  }
+
+  // ─── Apple Pay stubs (not available on Android) ─────────────────────────────
+
+  payWithApplePay(_orderParams: FlittOrderParams): Promise<FlittReceipt> {
+    return Promise.reject(new Error('Apple Pay is not supported on Android. Use payWithGooglePay instead.'));
+  }
+
+  payWithApplePayToken(_token: string): Promise<FlittReceipt> {
+    return Promise.reject(new Error('Apple Pay is not supported on Android. Use payWithGooglePayToken instead.'));
   }
 
   // ─── Cleanup ───────────────────────────────────────────────────────────────
