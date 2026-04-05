@@ -13,7 +13,7 @@ export class HomeComponent {
       name: 'nativescript-flitt',
     },
     {
-      name: 'nativescript-in-appp-update',
+      name: 'nativescript-in-app-update',
     },
     {
       name: 'pinia-persistedstate',

@@ -1,0 +1,18 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="In-App Update" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout class="p-20">
+        <ScrollView class="h-full">
+          <StackLayout>
+            <Label text="{{ status }}" textWrap="true" class="m-b-20" style="font-size: 16;"/>
+            <Button text="Check for Update" tap="{{ checkUpdate }}" class="btn btn-primary"/>
+            <Button text="Immediate Update" tap="{{ startImmediateUpdate }}" class="btn btn-primary"/>
+            <Button text="Flexible Update" tap="{{ startFlexibleUpdate }}" class="btn btn-primary"/>
+            <Button text="Complete Update" tap="{{ completeUpdate }}" class="btn btn-primary"/>
+            <Button text="Cleanup" tap="{{ cleanup }}" class="btn btn-outline"/>
+          </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</Page>

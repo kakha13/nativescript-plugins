@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'epub-reader', loadChildren: () => import('./plugin-demos/epub-reader.module').then((m) => m.EpubReaderModule) },
   { path: 'nativescript-flitt', loadChildren: () => import('./plugin-demos/nativescript-flitt.module').then((m) => m.NativescriptFlittModule) },
-  { path: 'nativescript-in-appp-update', loadChildren: () => import('./plugin-demos/nativescript-in-appp-update.module').then((m) => m.NativescriptInApppUpdateModule) },
+  { path: 'nativescript-in-app-update', loadChildren: () => import('./plugin-demos/nativescript-in-app-update.module').then((m) => m.NativescriptInAppUpdateModule) },
   { path: 'pinia-persistedstate', loadChildren: () => import('./plugin-demos/pinia-persistedstate.module').then((m) => m.PiniaPersistedstateModule) },
 ];
 

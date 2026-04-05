@@ -8,7 +8,7 @@
     "@kakha13/nativescript-flitt": "file:../../packages/nativescript-flitt",
     "@kakha13/epub-reader": "file:../../packages/epub-reader",
     "@kakha13/pinia-persistedstate": "file:../../packages/pinia-persistedstate",
-    "@kakha13/nativescript-in-appp-update": "file:../../packages/nativescript-in-appp-update"
+    "@kakha13/nativescript-in-app-update": "file:../../packages/nativescript-in-app-update"
   },
   "devDependencies": {
     "@nativescript/android": "9.0.2",

@@ -1,7 +1,7 @@
 
 <Button text="epub-reader" tap="{{ viewDemo }}" class="btn btn-primary rounded view-demo"/>
 <Button text="nativescript-flitt" tap="{{ viewDemo }}" class="btn btn-primary rounded view-demo"/>
-<Button text="nativescript-in-appp-update" tap="{{ viewDemo }}" class="btn btn-primary rounded view-demo"/>
+<Button text="nativescript-in-app-update" tap="{{ viewDemo }}" class="btn btn-primary rounded view-demo"/>
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
   <Page.actionBar>
     <ActionBar title="Plugin Demos" icon="" class="action-bar"/>
