@@ -1,0 +1,13 @@
+<ActionBar title="In-App Update" class="action-bar"> </ActionBar>
+<StackLayout class="p-20">
+  <ScrollView class="h-full">
+    <StackLayout>
+      <Label [text]="demoShared.get('status')" textWrap="true" class="m-b-20" style="font-size: 16"></Label>
+      <Button text="Check for Update" (tap)="demoShared.checkUpdate()" class="btn btn-primary"></Button>
+      <Button text="Immediate Update" (tap)="demoShared.startImmediateUpdate()" class="btn btn-primary"></Button>
+      <Button text="Flexible Update" (tap)="demoShared.startFlexibleUpdate()" class="btn btn-primary"></Button>
+      <Button text="Complete Update" (tap)="demoShared.completeUpdate()" class="btn btn-primary"></Button>
+      <Button text="Cleanup" (tap)="demoShared.cleanup()" class="btn btn-outline"></Button>
+    </StackLayout>
+  </ScrollView>
+</StackLayout>

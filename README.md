@@ -1,5 +1,6 @@
 - [@kakha13/epub-reader](packages/epub-reader/README.md)
 - [@kakha13/nativescript-flitt](packages/nativescript-flitt/README.md)
+- [@kakha13/nativescript-in-app-update](packages/nativescript-in-app-update/README.md)
 - [@kakha13/pinia-persistedstate](packages/pinia-persistedstate/README.md)
 
 # How to use?

@@ -45,6 +45,16 @@
             />
             <Button text="View demo" class="btn btn-primary card-button" @tap="$navigateTo(EpubReader)" />
           </StackLayout>
+
+          <StackLayout class="card" @tap="$navigateTo(InAppUpdate)">
+            <Label text="In-App Update" class="card-title" />
+            <Label
+              text="Google Play in-app updates (immediate and flexible)."
+              class="card-subtitle"
+              textWrap="true"
+            />
+            <Button text="View demo" class="btn btn-primary card-button" @tap="$navigateTo(InAppUpdate)" />
+          </StackLayout>
         </StackLayout>
       </GridLayout>
     </Page>
@@ -56,5 +66,6 @@ import { $navigateTo } from 'nativescript-vue';
 
 import EpubReader from '../plugin-demos/epub-reader.vue';
 import NativescriptFlitt from '../plugin-demos/nativescript-flitt.vue';
+import InAppUpdate from '../plugin-demos/nativescript-in-app-update.vue';
 import PiniaPersistedstate from '../plugin-demos/pinia-persistedstate.vue';
 </script>

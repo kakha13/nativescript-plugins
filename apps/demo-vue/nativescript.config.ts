@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.plugindemovue',
+  id: 'ge.any.plugindemovue',
   appResourcesPath: '../../tools/assets/App_Resources',
   appPath: 'app',
   android: {
