@@ -1,9 +1,0 @@
-android {
-    defaultConfig {
-        minSdkVersion 21
-    }
-}
-
-dependencies {
-    implementation 'com.google.android.play:app-update:2.1.0'
-}
